@@ -7,8 +7,8 @@
 # $@所有的目标文件 
 # $<所有的依赖文件的第一个文件
 TAR=main
-OBJ=main.o
-CC:=g++
+OBJ=main.o Array.o
+CC:=gcc
 RMRF:=rm -rf
 $(TAR):$(OBJ)
 	$(CC) $^ -o $@
