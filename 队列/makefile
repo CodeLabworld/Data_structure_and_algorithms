@@ -11,11 +11,11 @@ OBJ=main.o queue.o
 CC:=g++
 RMRF:=rm -rf
 $(TAR):$(OBJ)
-	$(CC) $^ -o $(TAR)
-main.o:main.c queue.h
-	$(CC) -c $<
-queue.o:queue.c queue.h
-	$(CC) -c $<
+	$(CC) $(OBJ) -o $(TAR)
+main.o:main.c 
+	$(CC) -c main.c
+queue.o:queue.c 
+	$(CC) -c queue.c
 # 类似于定义函数的固定格式	
 .PHONY:
 clearall:
