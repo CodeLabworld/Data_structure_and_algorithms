@@ -1,4 +1,4 @@
-#ifdef DULINK_H
+#ifndef DULINK_H
 typedef struct DuNode
 {
     int data;
