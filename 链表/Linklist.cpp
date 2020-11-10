@@ -221,13 +221,14 @@ int DeleteEven(LinkList &L)
     p = L->next;
     while (p) //循环遍历链表
     {
-        printf("%d\n", p->data);
         if (p->data % 2 == 0) //判断是否为偶数
         {
-            r = p;
             q->next = p->next;
         }
-        q = q->next;
+        else
+        {
+            q = q->next;
+        }
         p = p->next;
     }
     ShowAll(L);
