@@ -103,6 +103,7 @@ void Search(SqList &L)
         else if (search_data == mid_data)
         {
             printf("查找到该元素：%d\n", mid_data);
+            break;
         }
         else
         {
@@ -145,7 +146,7 @@ void ListDelete(SqList &L)
     int k;
     int i;
     printf("输入删除元素位置：");
-    scanf("%d%d", &i);
+    scanf("%d", &i);
     if (L.length == 0)
     {                     //表为空
         printf("表为空"); //错误提示
@@ -168,33 +169,39 @@ void ListDelete(SqList &L)
 int main()
 {
     SqList L;
+    printf("\n********建立顺序表*********\n");
     CreatList(L);
-    GetElem(L);
-    ListInsert(L);
-    ListDelete(L);
+    int common1;
 
-    int common1, common2;
     printf("---------------顺序表相关操作-------------------------\n");
     printf("****************************************************\n");
-    printf("命令：\n1.建立顺序表\n2.顺序表查找\n3.将元素排序\n4.二分法查找\n");
+    printf("命令：\n1.顺序表查找\n2.将元素排序\n3.二分法查找\n4.插入\n5.删除\n");
     printf("****************************************************\n");
-    printf("输入相关命令：");
-    scanf("%d", &common1);
-    if (common1 == 1)
+    while (1)
     {
-        CreatList(L);
-    }
-    else if (common1 == 2)
-    {
-        GetElem(L);
-    }
-    else if (common1 == 3)
-    {
-        paixu(L);
-    }
-    else if (common1 == 4)
-    {
-        Search(L);
+        printf("输入相关命令：");
+        scanf("%d", &common1);
+
+        if (common1 == 1)
+        {
+            GetElem(L);
+        }
+        else if (common1 == 2)
+        {
+            paixu(L);
+        }
+        else if (common1 == 3)
+        {
+            Search(L);
+        }
+        else if (common1 == 4)
+        {
+            ListInsert(L);
+        }
+        else if (common1 == 5)
+        {
+            ListDelete(L);
+        }
     }
 
     system("pause");
